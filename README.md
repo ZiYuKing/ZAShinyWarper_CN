@@ -1,40 +1,53 @@
 # ZA Shiny Warper
-For warping or shiny hunting with your character in Pokemon Legends: Z-A.
+用于在《宝可梦传说：Z-A》中进行传送（Warping）或闪光捕捉（Shiny Hunting） 的工具.
 
-Requires a hacked Switch console running either [sys-botbase](https://github.com/olliz0r/sys-botbase/releases) or [usb-botbase](https://github.com/Koi-3088/USB-Botbase/releases).
+需要一台运行 [sys-botbase](https://github.com/olliz0r/sys-botbase/releases) 或 [usb-botbase](https://github.com/Koi-3088/USB-Botbase/releases) 的已破解 Nintendo Switch 主机.
 
 ![Main window](ZAShinyWarper_Window.png?raw=true "The program itself")
 ![Success window](ZAShinyWarper_Success.png?raw=true "Finding a shiny")
 
-### Shiny hunting setup
-1) Ensure you have sys-botbase or an equivalent installed on your Switch running atmosphere, then create a save backup using something like JKSV.
-2) Open the program and connect to your console. You'll see all your "stashed" shinies.
-3) Find one or more nearby Pokemon spawn locations, for each one press "Set Pos", move away from it a little, then press "Restore Pos" to verify that it is a stable position.
-4) Set a final position nearby that is considered "safe" with little to no spawns, where you can easily save, and do the same.
-5) Optionally set any filters for the shiny Pokemon you want. I recommend keeping everything unchanged for now while the software is new.
-6) Press "Begin Warping"
+### 闪光捕捉设置步骤
+1) 确保你的 Switch 正在运行 Atmosphère，并已安装 sys-botbase 或类似工具，然后使用 **JKSV** 等软件创建游戏存档备份。  
+2) 打开本程序并连接到主机，你将看到所有“已储存的闪光宝可梦（stashed shinies）”。  
+3) 找到一个或多个附近的宝可梦刷新点（spawn locations）：  
+   - 对于每个位置，点击 **「Set Pos（设置位置）」**；  
+   - 然后稍微离开该区域；  
+   - 再点击 **「Restore Pos（恢复位置）」** 来验证该位置是否稳定。  
+4) 设置一个最终的「安全位置」，应靠近但几乎没有宝可梦刷新、可以方便保存游戏的地方，并进行同样的验证。  
+5) （可选）设置想要寻找的闪光宝可梦筛选条件。建议在软件初期阶段保持默认不变。
+6) 点击 **「Begin Warping（开始传送）」**。
 
-The program will now rotate the camera and warp between all your locations 10 times, then save to populate the "shiny stash". It will then read from the shiny stash and pause the game and show a message if a shiny is found. You must go and catch the shiny yourself, this tool cannot do that.
-If a shiny is not found, it will automatically loop again until one is found or you press the button to stop the shiny hunting routine.
+程序将执行以下操作：
 
-All shiny Pokemon from your stash are saved in their incomplete "wild" format in the StashedShinies folder.
+- 旋转相机并在所有记录的位置间传送 10 次；  
+- 然后保存游戏以生成“闪光储藏”（shiny stash）。
+- 
+接着它会读取储藏数据，如果检测到闪光宝可梦，则会**暂停游戏并显示提示**。
 
-### Known issues
-* The memory pointers I found for this project are reliable, but there are more ideal ones present, especially for shiny stashing which does not require saving the game, more research is required for finding this.
-* Sometimes your character goes flying into the air, the bot will fix that itself.
-* If one of your positions are in a battle zone, the bot will eventually show you an error that it was unable to warp.
-* The code is ugly.
-* The tool saves non-complete Pokemon data as PK9 files instead of the Z-A filetype until PKHeX is released to support the game.
+> ⚠️ 你需要亲自去捕捉闪光宝可梦，本工具不会自动捕捉。  
 
-### Other use-cases
-* Warping to places nearby.
-* Falling off or warping back on top of buildings multiple times.
-* Warping into the geometry and [falling through the map to your inevitable doom.](https://x.com/berichandev/status/1980471677659279623) This always happens when warping too far away due to the collision LODing.
+若未找到闪光，程序会自动循环执行，直到找到闪光或你手动停止。
 
-Rundown video: https://youtu.be/eKydGGQbS_0 
+所有从“闪光储藏”中发现的宝可梦都会以**未完成（野生状态）**的形式保存到 `StashedShinies` 文件夹中。
 
-# Attributions
+## 🧩 已知问题
 
-Leverages PKHeX nuget and sys-botbase interfacing built upon [NHSE.Injection](https://github.com/kwsch/NHSE) by [Kurt](https://github.com/kwsch).
-Thanks to Anubis for [this research tweet](https://x.com/Sibuna_Switch/status/1980306261213393163) that gave me a starting point.
-Thanks to Olliz0r, Koi, and FishGuy for all the interfacing tools.
+- 本项目使用的内存指针目前较为稳定，但仍存在更理想的指针位置，尤其是在无需保存游戏即可进行闪光储藏的情况下——这部分还需要进一步研究。  
+- 有时角色可能会**飞上天**，机器人会自动修复这一问题。  
+- 如果某个位置位于**战斗区域**，机器人最终会提示无法传送的错误。  
+- 代码写得很乱（原作者自嘲 😅）。  
+- 在 PKHeX 尚未支持《Z-A》之前，工具会将宝可梦数据保存为 `.PK9` 文件，而非 Z-A 专用格式。
+
+## 🧭 其他用途
+
+- 快速传送到附近位置。  
+- 多次从建筑上掉下或传送回屋顶。  
+- 传送进地图几何结构内并[掉出地图走向“必然的毁灭”](https://x.com/berichandev/status/1980471677659279623)（由于碰撞体加载距离问题，过远传送时必然会发生）。
+
+🎥 演示视频：[https://youtu.be/eKydGGQbS_0](https://youtu.be/eKydGGQbS_0)
+
+## 🙏 致谢
+
+本项目基于 [Kurt](https://github.com/kwsch) 的 [NHSE.Injection](https://github.com/kwsch/NHSE) 构建，并使用 **PKHeX nuget** 与 **sys-botbase 接口**。  
+感谢 **Anubis** 的[研究推文](https://x.com/Sibuna_Switch/status/1980306261213393163)，为本项目提供了起点。  
+感谢 **Olliz0r、Koi** 和 **FishGuy** 提供的接口工具支持。
