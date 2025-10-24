@@ -1,12 +1,13 @@
 # ZA Shiny Warper
-用于在《宝可梦传说：Z-A》中进行传送（Warping）或闪光捕捉（Shiny Hunting） 的工具.
 
-需要一台运行 [sys-botbase](https://github.com/olliz0r/sys-botbase/releases) 或 [usb-botbase](https://github.com/Koi-3088/USB-Botbase/releases) 的已破解 Nintendo Switch 主机.
+用于在 **《宝可梦传说：Z-A》** 中进行角色**传送（Warping）**或**闪光猎捕（Shiny Hunting）** 的工具。
+
+> ⚠️ 需要一台运行 [sys-botbase](https://github.com/olliz0r/sys-botbase/releases) 或 [usb-botbase](https://github.com/Koi-3088/USB-Botbase/releases) 的已破解 Nintendo Switch 主机.
 
 ![Main window](ZAShinyWarper_Window.png?raw=true "The program itself")
 ![Success window](ZAShinyWarper_Success.png?raw=true "Finding a shiny")
 
-### 闪光捕捉设置步骤
+## ⚙️ 闪光猎捕设置步骤
 1) 确保你的 Switch 正在运行 Atmosphère，并已安装 sys-botbase 或类似工具，然后使用 **JKSV** 等软件创建游戏存档备份。  
 2) 打开本程序并连接到主机，你将看到所有“已储存的闪光宝可梦（stashed shinies）”。  
 3) 找到一个或多个附近的宝可梦刷新点（spawn locations）：  
@@ -51,3 +52,5 @@
 本项目基于 [Kurt](https://github.com/kwsch) 的 [NHSE.Injection](https://github.com/kwsch/NHSE) 构建，并使用 **PKHeX nuget** 与 **sys-botbase 接口**。  
 感谢 **Anubis** 的[研究推文](https://x.com/Sibuna_Switch/status/1980306261213393163)，为本项目提供了起点。  
 感谢 **Olliz0r、Koi** 和 **FishGuy** 提供的接口工具支持。
+
+本人项目仅进行汉化工作，项目作者：[berichan](https://github.com/berichan)
